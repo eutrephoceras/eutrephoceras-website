@@ -8,7 +8,7 @@ This design incorporates some code from the 'Customize Zeal' Greasemonkey script
 /* Global */
 @font-face {
   font-family: Akzidenz;
-  src: url("images/Akzidenz.otf");
+  src: url("/fonts/cmunrm.woff2");
 }
 @font-face {
   font-family: Officina;
