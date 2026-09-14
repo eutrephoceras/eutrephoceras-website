@@ -6,7 +6,9 @@
 html,
 body {
     font-family: 'CMURoman';
-    background-color: #728b72;
+    background-image: url(../images/fabric.jpg);
+    background-size: cover;
+    background-repeat: repeat;
     color: #252324;
     font-size: 18px;
     font-style: bold;
@@ -18,11 +20,19 @@ body {
     margin: 0%;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    background-image: url(../images/paper.jpg);
+    background-repeat: repeat;
+    background-size: 200vh;
+    display: inline-block;
+}
+
 header {
     display: grid;
     grid-template-columns: 1fr 9fr;
     /* grid-template-rows: auto; */
     gap: 5vw;
+    margin: 0.5vmax;
 }
 header .icon {
     max-width: 10vmax;
@@ -37,11 +47,13 @@ header .headline {
 main {
     align-items: center;
     flex: 1;
+    margin: 0.5vmax;
 }
 
 footer {
     display: grid;
     grid-template-rows: auto 1fr;
+    margin: 0.5vmax;
 }
 footer .badges img {
     max-height: 10vmax;
