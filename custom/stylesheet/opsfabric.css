@@ -39,6 +39,14 @@ body {
   background-size: cover;
 }
 
+@media all and (min-width:0px) and (max-width: 400px) {
+  /* put your css styles in here */
+  body {
+    background: #000 url("/custom/images/fabric.jpg") fixed;
+    background-size: cover;
+  }
+}
+
 .forum_post pre {
   max-width: 660px;
   max-height: 500px;
