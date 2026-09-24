@@ -50,6 +50,12 @@ main {
     margin: 0.5vmax;
 }
 
+main .site-sections {
+    display: grid;
+    justify-content: space-around;
+    margin-top: 2vmax;
+}
+
 footer {
     display: grid;
     grid-template-rows: auto 1fr;

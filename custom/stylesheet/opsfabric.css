@@ -8,19 +8,19 @@ This design incorporates some code from the 'Customize Zeal' Greasemonkey script
 /* Global */
 @font-face {
   font-family: Akzidenz;
-  src: url("/fonts/cmunrm.woff2");
+  src: url("https://edge.opsfet.ch/styles/postmod/fonts/cmunrm.woff2");
 }
 @font-face {
   font-family: Officina;
-  src: url("images/Officina.otf");
+  src: url("https://edge.opsfet.ch/styles/postmod/images/Officina.otf");
 }
 @font-face {
   font-family: Corpid;
-  src: url("images/CorpidOffice.ttf");
+  src: url("https://edge.opsfet.ch/styles/postmod/images/CorpidOffice.ttf");
 }
 @font-face {
   font-family: Avant;
-  src: url("images/Avant.otf");
+  src: url("https://edge.opsfet.ch/styles/postmod/images/Avant.otf");
 }
 * {
   padding: 0;
@@ -113,25 +113,25 @@ a[onclick^=AddArtistField]:active {
 .main_column a[href^=http],
 .main_column a[href^=https] {
   padding: 0 10px 0 0;
-  background: url(images/external.png) 100% 4px no-repeat;
+  background: url(https://edge.opsfet.ch/styles/postmod/images/external.png) 100% 4px no-repeat;
 }
 
 .main_column a[href^=http]:hover,
 .main_column a[href^=https]:hover {
   padding: 0 10px 0 0;
-  background: url(images/external.png) 100% 4px no-repeat !important;
+  background: url(https://edge.opsfet.ch/styles/postmod/images/external.png) 100% 4px no-repeat !important;
 }
 
 .forum_post a[href^=http],
 .forum_post a[href^=https] {
   padding: 0 10px 0 0;
-  background: url(images/external.png) 100% 4px no-repeat;
+  background: url(https://edge.opsfet.ch/styles/postmod/images/external.png) 100% 4px no-repeat;
 }
 
 .forum_post a[href^=http]:hover,
 .forum_post a[href^=https]:hover {
   padding: 0 10px 0 0;
-  background: url(images/external.png) 100% 4px no-repeat;
+  background: url(https://edge.opsfet.ch/styles/postmod/images/external.png) 100% 4px no-repeat;
 }
 
 .head a[href^=http]:hover,
@@ -141,7 +141,7 @@ a[onclick^=AddArtistField]:active {
 .colhead_dark a[href^=http]:hover,
 .colhead_dark a[href^=https]:hover {
   padding: 0 10px 0 0;
-  background: url(images/external.png) 100% 4px no-repeat;
+  background: url(https://edge.opsfet.ch/styles/postmod/images/external.png) 100% 4px no-repeat;
 }
 
 .forum_post a[href^=http] img,
@@ -281,7 +281,7 @@ ul.thin li {
 }
 
 #footer {
-  background: transparent url("images/bg_footer.png");
+  background: transparent url("https://edge.opsfet.ch/styles/postmod/images/bg_footer.png");
   margin-top: 40px;
   width: 100%;
   text-align: center;
@@ -291,7 +291,7 @@ ul.thin li {
 }
 
 #footer::after {
-  content: url("images/gazelle.png");
+  content: url("https://edge.opsfet.ch/styles/postmod/images/gazelle.png");
 }
 
 #disclaimer_container {
@@ -582,7 +582,7 @@ table.no_grouping > tbody > tr.colhead > td:first-child + td {
 .last_read {
   width: 15px;
   height: 15px;
-  background: url("images/go_last_read.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/go_last_read.png") no-repeat center center;
   margin-left: 5px;
 }
 
@@ -748,7 +748,7 @@ th {
 .colhead_dark,
 .head {
   padding: 4px;
-  background: #000 url("images/table_header_dark.png") repeat-x;
+  background: #000 url("https://edge.opsfet.ch/styles/postmod/images/table_header_dark.png") repeat-x;
   border-bottom: 1px solid #000;
   color: #FBFCFD;
 }
@@ -846,7 +846,7 @@ ul.poll li.graph {
 .show_torrents {
   width: 28px;
   height: 28px;
-  background: url("images/show.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/show.png") no-repeat center center;
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
@@ -854,7 +854,7 @@ ul.poll li.graph {
 .hide_torrents {
   width: 28px;
   height: 28px;
-  background: url("images/hide.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/hide.png") no-repeat center center;
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
@@ -937,35 +937,35 @@ tr.torrent td {
 
 /* Layout (Forums) */
 .unread_locked_sticky {
-  background: url("images/locked_sticky_unread.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/locked_sticky_unread.png") no-repeat center center;
 }
 
 .read_locked_sticky {
-  background: url("images/locked_sticky_read.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/locked_sticky_read.png") no-repeat center center;
 }
 
 .read_sticky {
-  background: url("images/sticky_read.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/sticky_read.png") no-repeat center center;
 }
 
 .unread_sticky {
-  background: url("images/sticky_unread.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/sticky_unread.png") no-repeat center center;
 }
 
 .unread_locked {
-  background: url("images/locked_unread.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/locked_unread.png") no-repeat center center;
 }
 
 .read_locked {
-  background: url("images/locked_read.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/locked_read.png") no-repeat center center;
 }
 
 .unread {
-  background: url("images/unread.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/unread.png") no-repeat center center;
 }
 
 .read {
-  background: url("images/read.png") no-repeat center center;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/read.png") no-repeat center center;
 }
 
 table.forum_post {
@@ -1098,11 +1098,11 @@ ul .invitetree {
 
 .poll .graph .left_poll {
   width: 9px;
-  background: url("images/poll_left.png") top left no-repeat;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/poll_left.png") top left no-repeat;
 }
 
 .poll .graph .center_poll {
-  background: url("images/poll_middle.png") top left repeat-x;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/poll_middle.png") top left repeat-x;
   max-width: 730px;
 }
 
@@ -1112,7 +1112,7 @@ ul .invitetree {
 
 .poll .graph .right_poll {
   width: 11px;
-  background: url("images/poll_right.png") top left no-repeat;
+  background: url("https://edge.opsfet.ch/styles/postmod/images/poll_right.png") top left no-repeat;
 }
 
 .curtain {
@@ -1148,7 +1148,7 @@ ul .invitetree {
 
 input[type=button],
 input[type=submit] {
-  background: #111 url(images/alert-overlay.png) repeat-x;
+  background: #111 url(https://edge.opsfet.ch/styles/postmod/images/alert-overlay.png) repeat-x;
   display: inline-block;
   padding: 3px 6px 4px;
   margin: 3px;
@@ -1204,7 +1204,7 @@ input[type=text],
 input[type=time],
 input[type=url],
 input[type=week] {
-  background: #111 url(images/alert-overlay.png) repeat-x;
+  background: #111 url(https://edge.opsfet.ch/styles/postmod/images/alert-overlay.png) repeat-x;
   display: inline-block;
   padding: 3px;
   margin: 3px;
@@ -1257,7 +1257,7 @@ input[type=week]:active {
 }
 
 input[disabled=disabled] {
-  background: #4F4F4F url(images/alert-overlay.png) repeat-x;
+  background: #4F4F4F url(https://edge.opsfet.ch/styles/postmod/images/alert-overlay.png) repeat-x;
   color: #DFDFDF;
 }
 
