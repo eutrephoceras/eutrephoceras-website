@@ -1,0 +1,1341 @@
+@import url("https://edge.opsfet.ch/styles/postmod/style.css");
+
+body {
+  background: #000 url("/custom/images/opsfabric.jpg") no-repeat fixed;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 9pt;
+  color: #EEE;
+  background-size: cover;
+}
+
+@media (max-width: 575px) {
+
+  :root {
+    --pm-accent: #EFB34A;
+    --pm-accent-press: #EFA82C;
+    --pm-bar: #0d0d0d;
+    --pm-bar-hi: #262626;
+    --pm-line: rgba(255, 255, 255, 0.1);
+    --pm-text: #DFDFDF;
+    --pm-row-text: #646054;
+    --pm-loop-logo: url("https://edge.opsfet.ch/svg/site/ops-logo-loop-lightmode.svg");
+  }
+
+  /* ######################################################################
+     1  SITE LAYOUT
+     ###################################################################### */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+    /* in-page anchors shouldn't hide behind the fixed top tab */
+    scroll-margin-top: 36px;
+  }
+
+  body {
+    font-size: 13px;
+    line-height: 1.5;
+    /* fixed backgrounds are janky / expensive on mobile browsers */
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+  .m_hidden {
+    display: none !important;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  #wrapper {
+    padding-top: 36px;
+  }
+
+  #content {
+    width: auto;
+    max-width: 100%;
+    margin: 0 4px;
+    padding: 12px 8px;
+    /* overflow:hidden would defeat sticky table headers */
+    overflow: visible;
+  }
+
+  #footer {
+    margin-top: 24px;
+    padding: 1em 8px;
+  }
+
+  .thin,
+  .permission_head,
+  .permissions {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  ul.thin {
+    width: auto;
+  }
+
+  /* Orpheus: one column, sidebar last */
+  #content > .thin {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  #content > .thin > * {
+    max-width: 100%;
+  }
+
+  #content > .thin > table {
+    width: 100%;
+  }
+
+  .main_column,
+  .sidebar {
+    float: none;
+    width: 100%;
+  }
+
+  .sidebar {
+    order: 5;
+  }
+
+  .sidebar img,
+  .news_post img,
+  .wiki_article img,
+  #reportsv2 .manage_form img {
+    max-width: 100%;
+  }
+
+  .main_column .box .body {
+    font-size: inherit;
+  }
+
+  .linkbox {
+    width: 100%;
+    line-height: 2;
+  }
+
+  .linkbox a {
+    padding: 2px 3px;
+  }
+
+  pre,
+  .forum_post pre,
+  #debug_report pre {
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .box .body,
+  .forum_post .body,
+  .wrap_overflow {
+    overflow-wrap: anywhere;
+  }
+
+  blockquote {
+    margin: 8px 2px;
+    padding: 8px;
+  }
+
+  .filter_torrents {
+    width: 100%;
+  }
+
+  .edit_changelog textarea,
+  #requests .forum_post textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* permissions / toolboxes: let them wrap instead of fixed 300 / 200px */
+  .permissions {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .permission_container,
+  .toolbox_container {
+    float: none;
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  div[class~=tooltipster-base] {
+    max-width: 90vw;
+  }
+
+  /* ######################################################################
+     2  NOTIFICATIONS / ALERTS
+     ###################################################################### */
+  /* Postmod pins #alerts into the desktop header; on mobile it sits in flow */
+  #alerts {
+    position: static;
+    width: auto;
+    max-width: 100%;
+    margin: 8px 4px;
+  }
+
+  #alert-events .alertbar-gift-event {
+    max-width: 100%;
+    padding: 8px 12px;
+  }
+
+  .i-am-new {
+    width: calc(100% - 48px) !important;
+  }
+
+  .i-am-new li {
+    width: 100% !important;
+  }
+
+  /* ######################################################################
+     3  USER SETTINGS
+     ###################################################################### */
+  #user #userform {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .settings_sidebar {
+    flex: unset;
+    order: -1;
+    margin: 0;
+  }
+
+  #settings_sections {
+    position: static !important;
+    width: 100%;
+  }
+
+  /* ######################################################################
+     4  FORMS
+     ###################################################################### */
+  input[type=date],
+  input[type=datetime-local],
+  input[type=email],
+  input[type=month],
+  input[type=number],
+  input[type=password],
+  input[type=search],
+  input[type=tel],
+  input[type=text],
+  input[type=time],
+  input[type=url],
+  input[type=week],
+  select,
+  textarea {
+    /* 16px stops iOS zooming into fields on focus */
+    font-size: 16px;
+    padding: 6px 8px;
+    min-height: 36px;
+  }
+
+  /* width:100% minus Postmod's 3px side margins */
+  input[type=email],
+  input[type=password],
+  input[type=search],
+  input[type=text],
+  input[type=url],
+  select {
+    width: calc(100% - 6px);
+    max-width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  input[type=checkbox],
+  input[type=radio] {
+    width: 1.15em;
+    height: 1.15em;
+    min-height: 0;
+    vertical-align: middle;
+  }
+
+  button,
+  input[type=button],
+  input[type=submit],
+  input[type=button]:active,
+  input[type=button]:focus,
+  input[type=submit]:active,
+  input[type=submit]:focus {
+    min-height: 36px;
+    padding: 6px 14px;
+    font-size: 14px;
+    touch-action: manipulation;
+  }
+
+  form table td.label,
+  td.label {
+    width: 5rem;
+    text-align: left;
+  }
+
+  #upload .box {
+    width: 100% !important;
+  }
+
+  .cat_list tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .layout.cat_list.ft_cat_list {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .layout.cat_list.ft_cat_list tr td {
+    width: 40% !important;
+  }
+
+  /* ######################################################################
+     5  GENERAL TABLES
+     ###################################################################### */
+  td:first-child {
+    padding-left: 6px;
+  }
+
+  .m_table tbody,
+  .m_table .colhead,
+  .m_table .colhead_dark {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+  }
+
+  .m_table tbody {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* ######################################################################
+     6  TABLE HEADERS
+     ###################################################################### */
+  .m_table .colhead,
+  .m_table .colhead_dark {
+    flex-wrap: nowrap;
+  }
+
+  .m_table .colhead td:not(.m_th_right, .m_th_left),
+  .m_table .colhead_dark td:not(.m_th_right, .m_th_left) {
+    display: none;
+  }
+
+  .m_table .colhead td,
+  .m_table .colhead_dark td {
+    width: auto !important;
+  }
+
+  .m_th_left {
+    visibility: hidden;
+  }
+
+  /* "Info" replaces the left header everywhere except artist pages */
+  body:not(#artist) .m_th_left::before {
+    content: "Info";
+    color: #FBFCFD;
+    visibility: visible;
+  }
+
+  #artist table#request_table tr.colhead_dark td.m_th_left {
+    visibility: visible;
+  }
+
+  .m_th_left_collapsable {
+    padding-left: 34px;
+  }
+
+  .m_th_right {
+    margin-left: auto;
+  }
+
+  .m_th_right + .m_th_right {
+    margin-left: unset;
+  }
+
+  .m_th_right + .m_th_right + .m_th_right {
+    margin-left: unset;
+    padding-right: 12px;
+  }
+
+  /* artist discography: keep the "Albums / Live albums / ..." row titles */
+  body#artist div#discog_table .m_table tr.colhead_dark td.m_th_left {
+    visibility: visible;
+  }
+
+  body#artist div#discog_table .m_table tr.colhead_dark td.m_th_left a,
+  body#artist #requests-list td.m_th_left a {
+    padding-inline: 1rem;
+  }
+
+  /* ######################################################################
+     7  TABLE BODIES
+     ###################################################################### */
+  .m_table tr:not(.hidden, .colhead, .colhead_dark) {
+    display: block;
+    position: relative;   /* for the absolutely positioned .m_td_right */
+    width: 100%;
+    padding-bottom: 3px;
+    line-height: 1.4;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .m_table td {
+    display: block;
+  }
+
+  .m_table tr:not(.colhead, .colhead_dark) td:not(.m_td_left, .m_td_right) {
+    width: 81%;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left;
+  }
+
+  td.m_td_left {
+    display: flex;
+    float: left;
+    align-items: center;
+    width: 34px;
+    height: 100%;
+  }
+
+  /* ######################################################################
+     8  RIGHT-ALIGNED NUMERIC STATS
+     ###################################################################### */
+  .m_td_right {
+    position: absolute;
+    top: 0.2rem;
+    right: 16px;
+    margin: 0;
+    padding: 0 !important;
+    text-align: right;
+  }
+
+  .m_td_right + .m_td_right {
+    top: 1.6em;
+  }
+
+  .m_td_right + .m_td_right + .m_td_right {
+    top: 3em;
+  }
+
+  /* ######################################################################
+     9  TORRENT TABLE
+     ###################################################################### */
+  .torrent_table * {
+    float: none;
+  }
+
+  .torrent_table .remove_bookmark a,
+  .torrent_table .add_bookmark a {
+    float: none !important;
+  }
+
+  .torrent_table .cats_col:not(.m_cats_col) {
+    display: none;
+  }
+
+  /* keep bookmark + long titles from running under the stats on the right */
+  .group .group_info,
+  .torrent .group_info {
+    word-break: inherit;
+    margin-right: 40px;
+  }
+
+  .torrent .group_info span:first-child {
+    order: 10;
+  }
+
+  .group_info .tags,
+  .torrent_table div.tags {
+    order: 20;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  /* Postmod tags, as small chips */
+  .torrent_table .tags a,
+  .collage_table .td_info .tags a {
+    display: inline-block;
+    margin: 1px 2px 1px 0;
+    padding: 0 8px;
+    border: 1px solid #cfcfc8;
+    border-radius: 10px;
+    color: var(--pm-row-text);
+    font-size: 11px;
+    font-style: normal;
+  }
+
+  .torrent_table .tags a:hover,
+  .collage_table .td_info .tags a:hover {
+    color: #444;
+    border-color: #999;
+  }
+
+  #wrapper .m_table .edition {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .edition_info {
+    padding: 4px 12px 4px 32px !important;
+  }
+
+  .edition_1 {
+    min-height: 5em;   /* room for the right-aligned numbers */
+  }
+
+  .td_snatched.m_td_right,
+  .td_seeders.m_td_right,
+  .td_leechers.m_td_right {
+    min-width: 30px;
+    right: 4px;
+    text-align: left;
+  }
+
+  .td_snatched.m_td_right::before,
+  .td_seeders.m_td_right::before,
+  .td_leechers.m_td_right::before {
+    content: ":";
+    position: absolute;
+    right: calc(100% + 2px);
+    width: 14px;
+    text-align: right;
+    color: var(--pm-row-text);
+    background: left / 10px no-repeat url("https://edge.opsfet.ch/svg/std/arrow-loop-000.svg");
+    filter: brightness(80%);
+  }
+
+  .td_seeders.m_td_right::before {
+    background-image: url("https://edge.opsfet.ch/svg/std/arrow-up-round-000.svg");
+  }
+
+  .td_leechers.m_td_right::before {
+    background-image: url("https://edge.opsfet.ch/svg/std/arrow-down-round-000.svg");
+  }
+
+  .m_table.checkboxes td:first-child {
+    display: block;
+  }
+
+  /* 9.1 expanded torrent group */
+  .group_torrent:not(.edition, .hidden) {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 0 22px;
+  }
+
+  .torrent_table .group_torrent:not(.edition) td:first-child {
+    display: flex;
+    flex-wrap: wrap;   /* for rows with a million buttons */
+    width: 80%;
+    padding: 0;
+  }
+
+  .torrent_table .group_torrent:not(.edition) td:first-child span {
+    order: 5;
+    padding-left: 6px;
+  }
+
+  .td_file_count::before {
+    content: "Files: ";
+  }
+
+  .torrent_table .group_torrent td:nth-child(4) {
+    padding-bottom: 5px;
+    text-align: left;
+  }
+
+  #torrents_album .edition_1 td:nth-child(n+2) {
+    padding-left: 15px;
+  }
+
+  /* sizes on collage-discog and bookmark pages: force left */
+  table#discog_table.torrent_table.grouping.cats.m_table .number_column.td_size.nobr,
+  table#torrent_table.torrent_table.grouping.cats.m_table td.number_column.td_size.nobr {
+    margin-left: 1rem;
+    text-align: left;
+  }
+
+  table#discog_table.torrent_table.grouping.cats.m_table .number_column.td_size.nobr::before,
+  table#torrent_table.torrent_table.grouping.cats.m_table td.number_column.td_size.nobr::before {
+    content: "📁 ";
+  }
+
+  /* 9.2 top10 */
+  #top10 .td_size::before {
+    content: "Size: ";
+  }
+
+  .td_data::before {
+    content: "Transferred: ";
+  }
+
+  #top10 .tags {
+    width: auto;
+  }
+
+  /* ######################################################################
+     10  INVITE TABLE
+     ###################################################################### */
+  .invite_table tr:not(.colhead) td:nth-child(3)::before {
+    content: "Joined: ";
+  }
+
+  .invite_table tr:not(.colhead) td:nth-child(4)::before {
+    content: "Seen: ";
+  }
+
+  .td_dl.m_td_right::before {
+    content: "D: ";
+  }
+
+  .td_up.m_td_right::before {
+    content: "U: ";
+  }
+
+  .td_ratio.m_td_right::before {
+    content: "R: ";
+  }
+
+  /* ######################################################################
+     11  COLLAGE TABLE
+     ###################################################################### */
+  table.m_table.collage_table tr:not(.colhead, .colhead_dark) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .m_table .td_collage_category::before {
+    content: "Category: ";
+  }
+
+  .m_table .td_collage_category {
+    order: 2;
+    padding-top: 0;
+  }
+
+  .collage_table .td_info {
+    padding-bottom: 0;
+    font-size: larger;   /* collage titles */
+  }
+
+  .collage_table .td_updated::before {
+    content: "Updated: ";
+  }
+
+  .collage_table .td_updated {
+    order: 3;
+  }
+
+  .collage_table .td_author::before {
+    content: "Author: ";
+  }
+
+  .collage_table .td_author {
+    order: 3;
+  }
+
+  .collage_table .td_torrent_count::before {
+    content: "T: ";
+  }
+
+  .collage_table .td_subscribers::before {
+    content: "S: ";
+  }
+
+  .collage_table .td_collage_category,
+  .collage_table .td_updated,
+  .collage_table .td_author {
+    margin-left: 1rem;
+  }
+
+  /* ######################################################################
+     12  REQUESTS
+     ###################################################################### */
+  #requests .request_table tr:not(.colhead) td:nth-child(n+2),
+  #requests .request_table tr:not(.colhead) td:nth-child(6) {
+    padding: 0 6px;
+  }
+
+  #requests .request_table tr:not(.colhead) td:nth-child(5)::before {
+    content: "Filler: ";
+  }
+
+  #requests .request_table tr:not(.colhead) td:nth-child(6)::before {
+    content: "Requester: ";
+  }
+
+  #requests .request_table tr:not(.colhead) td:nth-child(7)::before {
+    content: "Added: ";
+  }
+
+  #requests .request_table tr:not(.colhead) td:nth-child(8)::before {
+    content: "Last Vote: ";
+  }
+
+  #requests .request_table tr:not(.colhead) td:nth-child(8) {
+    padding-bottom: 4px;
+  }
+
+  /* ######################################################################
+     13  FORUMS
+     ###################################################################### */
+  /* 13.1 forum index */
+  .forum_index .last_read,
+  .forum_index .last_topic,
+  .forum_index .last_poster {
+    float: none !important;
+  }
+
+  .forum_index .last_topic {
+    display: block;
+  }
+
+  #wrapper .td_read {
+    float: left;
+    width: 11px;
+    height: 12px;
+    margin: 3px 5px 0 5px;
+  }
+
+  .td_topic_count.m_td_right::before {
+    content: "T: ";
+  }
+
+  .td_post_count.m_td_right::before {
+    content: "P: ";
+  }
+
+  .td_author::before {
+    content: "Author: ";
+  }
+
+  .td_replies.m_td_right::before {
+    content: "R: ";
+  }
+
+  /* 13.2 post table structure */
+  table.forum_post {
+    margin: 8px 0;
+  }
+
+  .forum_post tbody {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .forum_post tr:not(.colhead_dark, .hidden) {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  table.forum_post td.body {
+    display: block;
+    width: 100%;
+  }
+
+  .forum_post .body img {
+    max-width: 100%;
+  }
+
+  /* 13.3 post headers: small avatar tucked into the header row */
+  .forum_post tr.colhead_dark {
+    min-height: 50px;
+    padding-left: 54px;
+    color: transparent;   /* hides the separator dashes */
+  }
+
+  .forum_post tr.colhead_dark span,
+  .forum_post tr.colhead_dark strong,
+  .forum_post tr.colhead_dark a {
+    color: #FBFCFD;
+  }
+
+  .forum_post tr.colhead_dark div {
+    display: inline;
+  }
+
+  .forum_post tr.colhead_dark div:nth-child(2) {
+    padding-left: 8px;
+  }
+
+  .forum_post .time::after {
+    content: "\a";
+    white-space: pre;
+  }
+
+  .forum_post .avatar,
+  table.forum_post td.avatar {
+    position: absolute;
+    top: -55px;
+    left: 5px;
+    width: 0;
+    padding: 0;
+    border: 0;
+    word-break: break-all;
+  }
+
+  .forum_post .avatar img {
+    position: absolute;
+    z-index: 1;
+    min-width: 0;
+    min-height: 0;
+    max-width: 50px !important;
+    max-height: 50px !important;
+  }
+
+  #inbox .body img {
+    max-width: 100% !important;
+  }
+
+  #inbox input[type=submit],
+  #forums input {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  /* ######################################################################
+     14  RULES / FRIENDS
+     ###################################################################### */
+  body#rules .m_th_left::before {
+    content: "Rules";
+  }
+
+  .rule_table .nobr {
+    white-space: unset;
+  }
+
+  body#friends div.avatar_container img {
+    display: none;
+  }
+
+  /* ######################################################################
+     15  STICKY TABLE HEADERS
+     ###################################################################### */
+  /* offset by the 32px top tab */
+  .colhead,
+  .colhead_dark {
+    position: sticky;
+    top: 32px;
+    z-index: 1;
+    font-size: 110%;
+    font-weight: bold;
+  }
+
+  .layout .colhead,
+  .layout .colhead_dark {
+    position: static;
+  }
+
+  body#user .main_column {
+    overflow: visible;
+  }
+
+  body#user .box.pad {
+    overflow: visible !important;
+  }
+
+  body#user .session_table.border {
+    overflow-x: auto !important;
+  }
+
+  body#staffpm #inbox {
+    overflow: visible;
+  }
+
+  body#user .user_options .colhead,
+  body#user .user_options .colhead_dark,
+  body#user .user_options .colhead td,
+  body#user .user_options .colhead_dark td,
+  body#user .session_table .colhead,
+  body#user .session_table .colhead_dark,
+  body#user .session_table .colhead td,
+  body#user .session_table .colhead_dark td,
+  body#staffpm .message_table .colhead,
+  body#staffpm .message_table .colhead_dark,
+  body#staffpm .message_table .colhead td,
+  body#staffpm .message_table .colhead_dark td {
+    position: sticky;
+    top: 32px;
+    z-index: 1;
+    background-color: #000;
+  }
+
+  /* ######################################################################
+     16  HEADER + SLIDE-DOWN MENU
+     ###################################################################### */
+  /* 16.1 Closed: a 32px tab across the top.
+     #header itself is invisible but keeps a 32px hit-area, so touching the
+     tab triggers :hover and the drawer opens (same trick as Orpheus Paper).
+     The drawer stays open until you touch elsewhere. */
+  #header {
+    --row-height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2300;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    width: 100%;
+    height: auto;
+    max-height: 32px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    background: var(--pm-bar);
+    transition: max-height 250ms ease, opacity 150ms ease;
+  }
+
+  #header a {
+    color: #FFF;
+  }
+
+  /* closed: taps go to #header (to open it), not to links underneath */
+  #header:not(:hover):not(:focus-within) a,
+  #header:not(:hover):not(:focus-within) input {
+    pointer-events: none;
+  }
+
+  /* 16.2 Open */
+  #header:hover,
+  #header:focus-within {
+    max-height: 100vh;
+    max-height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 1;
+    border-bottom: 3px solid var(--pm-accent);
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.85);
+  }
+
+  /* delay taps on the top row + search fields so the finger that opened the
+     drawer doesn't follow a link or pop up the keyboard */
+  @keyframes pm-delay-pointer-events {
+    0%, 50% { visibility: hidden; }
+    100%    { visibility: visible; }
+  }
+
+  #header:hover #searchbars input,
+  #header:hover #logo a,
+  #header:hover #userinfo_username a {
+    animation: pm-delay-pointer-events 2000ms linear;
+  }
+
+  /* 16.3 Top tab (closed state) */
+  #extracb1 {
+    display: none;
+  }
+
+  #extra1 {
+    position: fixed;
+    top: 5px;
+    left: calc(50% - 12.5px);
+    z-index: 2200;
+    display: block;
+    width: 25px;
+    height: 25px;
+    opacity: 1 !important;
+    pointer-events: none;
+    background-image: url("https://edge.opsfet.ch/svg/std/chevrons-down-ccc.svg");
+    background-size: contain;
+  }
+
+  #extra4,
+  #extra5 {
+    position: fixed;
+    top: 0;
+    height: 32px;
+    display: block;
+  }
+
+  #extra4 {
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2100;
+    background: linear-gradient(var(--pm-bar-hi), #0b0b0b);
+    border-bottom: 2px solid var(--pm-accent);
+    border-radius: 0 0 9px 9px;
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  #extra5 {
+    left: 4px;
+    z-index: 2200;
+    width: 15%;
+    pointer-events: none;
+    transform: translateZ(0);
+    background: var(--pm-loop-logo) left center / auto 26px no-repeat;
+  }
+
+  /* 16.4 Drawer layout.
+     #userinfo is flattened with display:contents so its four lists become
+     direct flex items of #header and can be re-ordered as rows:
+       1 logo + username row   2 uploads / stats (two columns)
+       3 main menu             4 inbox etc.        5 search boxes        */
+  #userinfo {
+    display: contents;
+  }
+
+  /* row 1 ---------------------------------------------------------- */
+  #logo {
+    order: 1;
+    position: static;
+    width: 150px;
+    height: var(--row-height);
+    margin: 0;
+    background-size: 138px auto;       /* keeps Postmod's embedded logo */
+    background-position: 8px center;
+    background-repeat: no-repeat;
+  }
+
+  #logo a {
+    width: 100%;
+    height: 100%;
+  }
+
+  #userinfo_username {
+    order: 2;
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
+    position: static;
+    margin: 0;
+    list-style: none;
+  }
+
+  #userinfo_username li {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    line-height: var(--row-height);
+    text-align: center;
+  }
+
+  #userinfo_username li a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: var(--row-height);
+  }
+
+  #nav_userclass {
+    display: none;
+  }
+
+  #userinfo_username .brackets::before,
+  #userinfo_username .brackets::after {
+    content: none;
+  }
+
+  /* row 2 ---------------------------------------------------------- */
+  #userinfo_major,
+  #userinfo_stats {
+    position: static;
+    display: block;
+    flex: 1 1 50%;
+    width: 50%;
+    margin: 0;
+    padding: 6px 10px;
+    list-style: none;
+    font-size: 12px;
+    border-top: 1px solid var(--pm-line);
+  }
+
+  #userinfo_major {
+    order: 3;
+    text-align: left;
+  }
+
+  #userinfo_stats {
+    order: 4;
+    text-align: right;
+  }
+
+  #userinfo_major li,
+  #userinfo_stats li {
+    display: block;
+    margin: 0;
+    line-height: 24px;
+  }
+
+  #userinfo_major a,
+  #userinfo_stats a {
+    text-decoration: underline dashed;
+  }
+
+  #userinfo_stats span {
+    white-space: nowrap;
+  }
+
+  /* row 3: main menu ------------------------------------------------ */
+  #menu {
+    order: 5;
+    position: static;
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    margin: 0;
+    border-top: 1px solid var(--pm-line);
+    font-size: 13px;
+  }
+
+  #menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #menu ul li {
+    float: none;
+    display: block;
+    width: 33.333%;
+    margin: 0;
+  }
+
+  #menu ul li a {
+    display: block;
+    padding: 0;
+    line-height: var(--row-height);
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    font-size: 13px;
+  }
+
+  #menu ul li a:hover,
+  #menu ul li a:active,
+  #menu ul li a:focus {
+    border-bottom-color: var(--pm-accent);
+  }
+
+  /* home is the logo's job here */
+  #nav_index {
+    display: none;
+  }
+
+  /* current-page marker (Postmod uses #111, invisible on this dark bar) */
+  #index #nav_index a,
+  #torrents #nav_torrents a,
+  #collage #nav_collages a,
+  #requests #nav_requests a,
+  #forums #nav_forums a,
+  #chat #nav_irc a,
+  #top10 #nav_top10 a,
+  #rules #nav_rules a,
+  #wiki #nav_wiki a,
+  #staff #nav_staff a {
+    border-bottom: 3px solid var(--pm-accent-press);
+  }
+
+  /* row 4: inbox / subscriptions / ... ------------------------------ */
+  #userinfo_minor {
+    order: 6;
+    position: static;
+    display: flex;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--pm-line);
+  }
+
+  #userinfo_minor li {
+    display: block;
+    width: 33.333%;
+    margin: 0;
+  }
+
+  #userinfo_minor li a {
+    display: block;
+    line-height: var(--row-height);
+    color: #FFF;
+  }
+
+  /* row 5: search boxes ---------------------------------------------- */
+  #searchbars {
+    order: 7;
+    position: static;
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0;
+    padding: 6px 4px 8px;
+    border-top: 1px solid var(--pm-line);
+  }
+
+  #searchbars > ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+
+  #searchbars > ul > li {
+    float: none;
+    width: 50%;
+    padding: 3px;
+  }
+
+  #header #searchbars input {
+    width: 100%;
+    height: calc(var(--row-height) - 6px);
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  #searchbars > ul > li > ul {
+    left: 3px;
+    right: 3px;
+    width: auto;
+    margin-top: 2px;
+    z-index: 2510;
+  }
+
+  #searchbars > ul > li > ul li a {
+    color: var(--pm-text);
+  }
+
+  /* 16.5 Rich artist autocomplete: let the mobile takeover own the field */
+  body.ac-mobile-rich-open #header #searchbars > ul {
+    position: static;
+    padding: 0;
+  }
+
+  body.ac-mobile-rich-open #header #searchbars > ul > li#searchbar_artists {
+    width: auto;
+    height: auto;
+  }
+
+  body.ac-mobile-rich-open #header #searchbars > ul > li#searchbar_artists .search_form {
+    margin: 0;
+  }
+
+  body.ac-mobile-rich-open #header #searchbars > ul > li#searchbar_artists input {
+    height: auto;
+  }
+
+  body.ac-mobile-rich-open #header,
+  body.ac-mobile-rich-open #header:hover {
+    z-index: 3502 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    pointer-events: none !important;
+  }
+
+  body.ac-mobile-rich-open #header #searchbars {
+    pointer-events: auto !important;
+  }
+
+  body.ac-mobile-rich-open #header > :not(#searchbars) {
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body.ac-mobile-rich-open #header #searchbars input,
+  body.ac-mobile-rich-open #header:hover #searchbars input {
+    visibility: visible !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  body.ac-mobile-rich-open:has(ul.autocomplete-menu.show) {
+    --ac-dim-overlay: #000;
+  }
+
+  /* ######################################################################
+     17  TORRENT SEARCH TAG LIST
+     ###################################################################### */
+  #taglist tr.label {
+    height: auto;
+    border: thick solid #111;
+  }
+
+  #taglist tr.label td {
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    color: var(--pm-accent);
+    background: #111;
+    border: 0;
+  }
+
+  #taglist tr.label td::after {
+    content: '➤ Use "Hide Tags" above or Profile Settings to hide this list of tags.';
+    font-style: italic;
+  }
+
+  #taglist tr:not(.label) td {
+    display: inline-block;
+    width: 31% !important;
+    margin-bottom: 0.1rem;
+    padding: 0.25rem 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: baseline;
+    font-style: italic;
+    font-weight: 200;
+    color: var(--pm-text) !important;
+    background: #111;
+    border: 1px solid #444;
+    border-radius: 1rem;
+  }
+
+  #taglist tr:not(.label) td a {
+    color: var(--pm-text) !important;
+  }
+}
+
+/* ##########################################################################
+   18  SHORT SCREENS (landscape phones): compact the menu in two steps
+   ########################################################################## */
+@media (max-width: 575px) and (max-height: 575px) {
+  #header {
+    --row-height: 2rem;
+  }
+}
+
+@media (max-width: 575px) and (height <= 503.125px) {
+  #userinfo_major,
+  #userinfo_major > *,
+  #userinfo_stats,
+  #userinfo_stats > * {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) and (prefers-reduced-motion: reduce) {
+  #header {
+    transition: none;
+  }
+}
