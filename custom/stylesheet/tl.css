@@ -1,8 +1,24 @@
+/* ==UserStyle==
+@name         TorrentLeech Stylesheet
+@description  Custom stylesheet for the private tracker TorrentLeech
+@version      2026
+@match        https://classic.torrentleech.org/*
+@downloadURL https://eutrephoceras.net/custom/stylesheet/tl.css
+@updateURL   https://eutrephoceras.net/custom/stylesheet/tl.css
+==/UserStyle== */
 body {
-    background: #1a2a32 url("https://eutrephoceras.net/custom/images/mampaper.jpg") no-repeat fixed;
+    background: #1a2a32 url("https://eutrephoceras.net/custom/images/tltile.jpg") no-repeat fixed;
     background-size: cover;
+    color: #c5d2d2;
 }
 
 #main {
-    background: #000000a0;
+    background: rgba(30, 30, 30, 0.8);
+}
+ {
+    color: #c5d2d2;
+}
+
+#latest_news p, .pagination a, .pagination .current, .pagination .pagnext, .pagination .pagprevious {
+    color: #ffffff;
 }
