@@ -1,9 +1,7 @@
 @import url("https://edge.opsfet.ch/styles/postmod/style.css");
 
 body {
-  background: #000 url("/custom/images/opsfabric.jpg") no-repeat fixed;
+  background: rgb(14.7355%,40.2934%,31.8498%) url("/custom/images/opsfabric.jpg") no-repeat fixed;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 9pt;
-  color: #EEE;
   background-size: cover;
 }
