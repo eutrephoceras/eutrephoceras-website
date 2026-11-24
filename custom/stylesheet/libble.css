@@ -55,7 +55,11 @@ h1.hidden {
     color: #ffffff;
 }
 
-#userinfo_username #userinfo_stats{
+#userinfo_username, #userinfo_stats{
     color: rgba(228, 228, 228, 0);
-    radius: 6px;
+    border-radius: 6px;
+}
+
+.brackets {
+    padding-right: 2px;
 }
