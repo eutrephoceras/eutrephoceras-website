@@ -6,3 +6,51 @@ body {
     font: 9pt/12pt 'Lucida Grande', Helvetica, Arial, sans-serif;
     max-height:2000px
 }
+
+#menu a {
+    color:#ffffff
+}
+
+#userinfo_minor {
+    width: 100%;
+    left: 0;
+    background: #ffffff;
+    background:linear-gradient(to right, rgba(228, 228, 228, 0), rgba(200, 200, 200, 1))
+}
+
+#userinfo_major a, #userinfo_minor a {
+    color:#fff
+}
+
+#userinfo_major a {
+    font-size: 13px;
+    color:#fff
+}
+
+#footer {
+    width: 100%;
+    margin: 50px auto 0;
+    padding-top: 50px;
+    text-align: center;
+    color:#ffffff
+}
+
+h1, h2, h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    color:#666666
+}
+
+h1.hidden {
+    margin: 0 auto;
+    padding: 12px 10px;
+    display: block;
+    text-transform: lowercase;
+    color: #ffffff;
+    font-size: 22pt;
+    border-bottom:2px solid #ddd
+}
+
+#logo {
+    color: #ffffff;
+}
