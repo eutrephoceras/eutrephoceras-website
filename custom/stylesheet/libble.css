@@ -1,0 +1,8 @@
+@import url("https://static.libble.me/min/?f=styles/mono/style.css,styles/global.css,styles/updates_global.css,styles/follow_global.css,styles/cloud_global.css&2030");
+
+body {
+    padding: 65px 20px 60px !important;
+    background: url("/custom/images/libblepaper.jpg") no-repeat fixed;
+    font: 9pt/12pt 'Lucida Grande', Helvetica, Arial, sans-serif;
+    max-height:2000px
+}
