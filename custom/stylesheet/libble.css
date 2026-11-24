@@ -54,3 +54,8 @@ h1.hidden {
 #logo {
     color: #ffffff;
 }
+
+#userinfo_username #userinfo_stats{
+    color: rgba(228, 228, 228, 0);
+    radius: 6px;
+}
