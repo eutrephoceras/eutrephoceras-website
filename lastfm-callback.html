@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Last.fm authorization</title>
+<pre id="output">Reading authorization…</pre>
+
+<script>
+const token = new URLSearchParams(location.search).get("token");
+const output = document.querySelector("#output");
+
+if (token) {
+  output.textContent =
+    "Copy this token into your local script:\n\n" + token;
+} else {
+  output.textContent = "No Last.fm token was found.";
+}
+</script>
